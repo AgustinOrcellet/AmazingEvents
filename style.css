@@ -1,0 +1,64 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: auto;
+    max-width: 1500px;
+}
+#logo{
+    width:150px;
+}
+#carouselExample{
+    height: 300px;
+}
+#carouselExampleCaptions{
+    position: relative;
+    height: 300px;
+  }
+  
+.contenedorTitulo{
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 9%;
+}
+.titulo{
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.banner{
+        width: 100%;
+        height: 300px;
+        object-fit:cover;
+}
+#mGlass{
+    width:30px;
+}
+.card{
+    width: 22rem;
+}
+.pCard{
+text-align: justify;
+}
+.card-title{
+    font-size: 2rem;
+}
+#contactForm{
+    max-width: 80vh;
+    ;
+}
+#inputMessage{
+    height: 300px
+}
+#footer{
+    margin-top: auto;
+   
+}
+.redes{
+    width: 50px;
+}
