@@ -7,7 +7,7 @@ const $currentDate = Date.parse(fechaActual)
 
 const pastE = []
  for(let event of data.events){
-    if ($currentDate < (Date.parse(new Date (event.date))))
+    if ($currentDate > (Date.parse(new Date (event.date))))
         pastE.push(event)
      }
 
