@@ -38,6 +38,11 @@ body{
 #mGlass{
     width:30px;
 }
+.imgCard{
+    width: 100%;
+    height: 300px;
+    object-fit:cover;
+}
 .card{
     width: 22rem;
 }
@@ -46,6 +51,9 @@ text-align: justify;
 }
 .card-title{
     font-size: 2rem;
+}
+#price{
+   min-width: 60px;
 }
 #contactForm{
     max-width: 80vh;
@@ -59,4 +67,7 @@ text-align: justify;
 }
 .redes{
     width: 50px;
+}
+.cardDes{
+    height: 100px
 }
