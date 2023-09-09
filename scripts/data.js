@@ -2,7 +2,7 @@ const data = {
     currentDate: "2023-01-01",
     events: [
       {
-        _id: "639c723b992482e5f2834be9",
+        id: "639c723b992482e5f2834be9",
         name: "Collectivities Party",
         image: "https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg",
         date: "2022-12-12",
@@ -16,7 +16,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723b992482e5f2834beb",
+        id: "639c723b992482e5f2834beb",
         name: "Korean style",
         image: "https://i.postimg.cc/ZmD3Xf57/Korean-style.jpg",
         date: "2023-08-12",
@@ -30,7 +30,7 @@ const data = {
         estimate: 42756,
       },
       {
-        _id: "639c723c992482e5f2834bed",
+        id: "639c723c992482e5f2834bed",
         name: "Jurassic Park",
         image: "https://i.postimg.cc/GmHRkbNV/Jurassic-Park.jpg",
         date: "2022-11-02",
@@ -44,7 +44,7 @@ const data = {
         assistance: 65892,
       },
       {
-        _id: "639c723c992482e5f2834bef",
+        id: "639c723c992482e5f2834bef",
         name: "Parisian Museum",
         image: "https://i.postimg.cc/c4C2zXm8/Parisian-Museum.jpg",
         date: "2023-11-02",
@@ -58,7 +58,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723c992482e5f2834bf1",
+        id: "639c723c992482e5f2834bf1",
         name: "Comicon",
         image: "https://i.postimg.cc/KYD0jMf2/comicon.jpg",
         date: "2022-02-12",
@@ -72,7 +72,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723c992482e5f2834bf3",
+        id: "639c723c992482e5f2834bf3",
         name: "Halloween Night",
         image: "https://i.postimg.cc/RZ9fH4Pr/halloween.jpg",
         date: "2023-02-12",
@@ -85,7 +85,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723c992482e5f2834bf5",
+        id: "639c723c992482e5f2834bf5",
         name: "Metallica in concert",
         image: "https://i.postimg.cc/PrMJ0ZMc/Metallica-in-concert.jpg",
         date: "2023-01-22",
@@ -98,7 +98,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723c992482e5f2834bf7",
+        id: "639c723c992482e5f2834bf7",
         name: "Electronic Fest",
         image: "https://i.postimg.cc/KvsSK8cj/Electronic-Fest.jpg",
         date: "2022-01-22",
@@ -112,7 +112,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723d992482e5f2834bf9",
+        id: "639c723d992482e5f2834bf9",
         name: "10K for life",
         image: "https://i.postimg.cc/fyLqZY9K/10-K-for-life.jpg",
         date: "2022-03-01",
@@ -125,7 +125,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723d992482e5f2834bfb",
+        id: "639c723d992482e5f2834bfb",
         name: "15K NY",
         image: "https://i.postimg.cc/zv67r65z/15kny.jpg",
         date: "2023-03-01",
@@ -139,7 +139,7 @@ const data = {
         estimate: 2569800,
       },
       {
-        _id: "639c723d992482e5f2834bfd",
+        id: "639c723d992482e5f2834bfd",
         name: "School's book fair",
         image: "https://i.postimg.cc/Sst763n6/book1.jpg",
         date: "2023-10-15",
@@ -152,7 +152,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723d992482e5f2834bff",
+        id: "639c723d992482e5f2834bff",
         name: "Just for your kitchen",
         image: "https://i.postimg.cc/05FhxHVK/book4.jpg",
         date: "2022-11-09",
@@ -166,7 +166,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723d992482e5f2834c01",
+        id: "639c723d992482e5f2834c01",
         name: "Batman",
         image: "https://i.postimg.cc/vH52y81C/cinema4.jpg",
         date: "2022-3-11",
@@ -179,7 +179,7 @@ const data = {
         __v: 0,
       },
       {
-        _id: "639c723d992482e5f2834c03",
+        id: "639c723d992482e5f2834c03",
         name: "Avengers",
         image: "https://i.postimg.cc/T3C92KTN/scale.jpg",
         date: "2023-10-15",

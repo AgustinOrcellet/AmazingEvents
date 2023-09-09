@@ -71,3 +71,14 @@ text-align: justify;
 .cardDes{
     height: 100px
 }
+.filtro{
+    display: none;
+}
+.imgCardDetails{
+    width: 650px;
+    height: 400px;
+}
+.infoDetails{
+    font-size: 1.5em;
+    line-height: 2em;
+}

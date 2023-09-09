@@ -37,3 +37,5 @@ for(let event  of upcomingsE){
 }
 
  $cardSectionUp.innerHTML = cardsUP
+
+
