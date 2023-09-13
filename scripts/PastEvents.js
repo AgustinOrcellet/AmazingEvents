@@ -1,21 +1,52 @@
 const $cardSectionPast = document.getElementById("cardSectionPast")
 
-
-const fechaActual = new Date (data.currentDate)
-
-const $currentDate = Date.parse(fechaActual)
-
 const $formCheckPast = document.getElementById('formCheckPast')
 
 const $search = document.getElementById('buscadorPast')
 
-const $categories =[... new Set (data.events.map(element => element.category))]
+fetch("https://mindhub-xj03.onrender.com/api/amazing") 
+  .then( (response) => response.json()) 
+  .then( data => {
+     let events = data.events
 
-const pastE = []
- for(let event of data.events){
-    if ($currentDate > (Date.parse(new Date (event.date))))
-        pastE.push(event)
+     
+     const fechaActual = new Date (data.currentDate)
+
+     const $currentDate = Date.parse(fechaActual)
+
+     const $categories =[... new Set (events.map(element => element.category))]
+
+     const pastE = []
+          for(let event of data.events){
+           if ($currentDate > (Date.parse(new Date (event.date))))
+                 pastE.push(event)
+           }
+           console.log(pastE)
+
+     printFormChecksInHTML($categories, $formCheckPast)
+
+     printCardsInHTML(pastE, $cardSectionPast)
+
+     $formCheckPast.addEventListener("change", ()=>{
+          const $doubleFilt = doubleFilter(pastE,$search)
+          printCardsInHTML($doubleFilt,$cardSectionPast)
      }
+     )     
+
+     $search.addEventListener("keyup", ()=>{
+          const $doubleFilter = doubleFilter(pastE,$search)
+          printCardsInHTML($doubleFilter,$cardSectionPast)
+          if ($doubleFilter.length == 0){
+             alert("No hay eventos con ese nombre")
+             $search.value = ""
+             uncheckAll()
+             printCardsInHTML(pastE, $cardSectionPast)
+          }
+        }
+     )
+     })
+     .catch( error => {console.log(error)} )
+
 
 
 function printChecks(category){
@@ -38,14 +69,7 @@ function printFormChecksInHTML(array, elementoHTML){
     elementoHTML.innerHTML = formChecks
 }
 
-printFormChecksInHTML($categories, $formCheckPast)
 
-
-$formCheckPast.addEventListener("change", ()=>{
-        const $doubleFilt = doubleFilter(pastE,$search)
-        printCardsInHTML($doubleFilt,$cardSectionPast)
-        }
-)
   
   function printCardsUp(event){
       let template = ""
@@ -59,7 +83,7 @@ $formCheckPast.addEventListener("change", ()=>{
       <div class="d-flex flex-row justify-content-center p-2 text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle rounded-3" id="price">$
        ${event.price}
       </div>
-      <a href="./details.html?id=${event.id}" class="btn btn-secondary">Details</a>
+      <a href="./details.html?_id=${event._id}" class="btn btn-secondary">Details</a>
     </div>
   </div>
   </div>
@@ -68,17 +92,7 @@ $formCheckPast.addEventListener("change", ()=>{
   }
   
   
-  $search.addEventListener("keyup", ()=>{
-       const $doubleFilter = doubleFilter(pastE,$search)
-       printCardsInHTML($doubleFilter,$cardSectionPast)
-       if ($doubleFilter.length == 0){
-          alert("No hay eventos con ese nombre")
-          $search.value = ""
-          uncheckAll()
-          printCardsInHTML(pastE, $cardSectionPast)
-     }
-     }
-     )
+
 
       
    function  printCardsInHTML(array, elementoHTML) {
@@ -90,7 +104,7 @@ $formCheckPast.addEventListener("change", ()=>{
       
    }
    
-   printCardsInHTML(pastE, $cardSectionPast)
+   
       
       
    function filterByMarkedForms(array){
@@ -100,7 +114,7 @@ $formCheckPast.addEventListener("change", ()=>{
         if(valuesForms.length !== 0){
           return  filtereCardsByForms
         }else{
-          return pastE
+          return array
    }}
       
    function filterBySerch(array,input){
@@ -119,4 +133,4 @@ $formCheckPast.addEventListener("change", ()=>{
      document.querySelectorAll('#formCheckPast input[type=checkbox]').forEach(function(checkElement) {
          checkElement.checked = false;
      });
-}  
+}

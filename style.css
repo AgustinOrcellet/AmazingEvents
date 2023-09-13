@@ -74,9 +74,12 @@ text-align: justify;
 .filtro{
     display: none;
 }
+#cardDetails{
+    width: 80%;
+}
 .imgCardDetails{
-    width: 650px;
-    height: 400px;
+    max-width: 600px;
+    max-height: 350px;
 }
 .infoDetails{
     font-size: 1.5em;

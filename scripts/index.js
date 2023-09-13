@@ -6,7 +6,42 @@ const $formCheck = document.getElementById('formCheck')
 const $search = document.querySelector('input[type="search"]')
 
 
-const $categories =[... new Set (data.events.map(element => element.category))]
+fetch("https://mindhub-xj03.onrender.com/api/amazing") 
+  .then( (response) => response.json()) 
+  .then( data => {
+     let events = data.events
+     
+     const $categories =[... new Set (events.map(element => element.category))]
+
+
+     $formCheck.addEventListener("change", ()=>{
+      const $doubleFilt = doubleFilter(events,$search)
+      printCardsInHTML($doubleFilt,$cardSection)
+    }
+    )
+
+    $search.addEventListener("keyup", ()=>{
+      const $doubleFilter = doubleFilter(events,$search)
+      printCardsInHTML($doubleFilter,$cardSection)
+      if ($doubleFilter.length == 0){
+         alert("No hay eventos con ese nombre")
+         $search.value = ""
+         uncheckAll()
+         printCardsInHTML(events, $cardSection)
+        }
+      }
+    )
+    
+    printFormChecksInHTML($categories, $formCheck)  
+
+    printCardsInHTML(events, $cardSection)
+
+    
+
+  })
+  .catch( error => {console.log(error)} )
+
+
 
 
 
@@ -29,13 +64,8 @@ function printFormChecksInHTML(array, elementoHTML){
 elementoHTML.innerHTML = formChecks
 }
 
-printFormChecksInHTML($categories, $formCheck)
 
-$formCheck.addEventListener("change", ()=>{
-  const $doubleFilt = doubleFilter(data.events,$search)
-  printCardsInHTML($doubleFilt,$cardSection)
-}
-)
+
 
 
 
@@ -51,7 +81,7 @@ function printCards(event){
     <div class="d-flex flex-row justify-content-center p-2 text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle rounded-3" id="price">$
      ${event.price}
     </div>
-    <a href="./details.html?id=${event.id}" class="btn btn-secondary">Details</a>
+    <a href="./details.html?_id=${event._id}" class="btn btn-secondary">Details</a>
   </div>
 </div>
 </div>
@@ -59,17 +89,7 @@ function printCards(event){
    return template
 }
 
-$search.addEventListener("keyup", ()=>{
-  const $doubleFilter = doubleFilter(data.events,$search)
-  printCardsInHTML($doubleFilter,$cardSection)
-  if ($doubleFilter.length == 0){
-     alert("No hay eventos con ese nombre")
-     $search.value = ""
-     uncheckAll()
-     printCardsInHTML(data.events, $cardSection)
-    }
-  }
-)
+
 
 function  printCardsInHTML(array, elementoHTML) {
   let estructura = ""
@@ -79,7 +99,7 @@ function  printCardsInHTML(array, elementoHTML) {
   elementoHTML.innerHTML = estructura
 
 }
-printCardsInHTML(data.events, $cardSection)
+
 
 
 function filterByMarkedForms(array){
@@ -90,7 +110,7 @@ function filterByMarkedForms(array){
     return  filteredCardsByForms
     
   }else{
-    return  data.events
+    return  array
 }}
 
 function filterBySerch(array,input){
